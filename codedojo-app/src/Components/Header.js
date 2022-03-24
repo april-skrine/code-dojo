@@ -3,7 +3,10 @@ import React from 'react'
 function Header() {
   return (
     <div>
-        <button>LOGIN</button>
+        <div className="header">
+          <button>LOGIN</button>
+          <img src=""/>
+        </div>
     </div>
   )
 }
