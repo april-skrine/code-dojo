@@ -1,11 +1,11 @@
 import React from 'react'
 
-function 
+function LeaderContainer() {
   return (
     <div>
-        {/* show leader board stats for clans */}
+        <p>this is leaders</p>
     </div>
   )
 }
 
-export default;
+export default LeaderContainer;

@@ -21,19 +21,32 @@ function Login({ setCurrentUser }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">LOG IN</button>
-      </form>
+      <div className='login-container'>
+        <div className='login-container-child'>
+          <img src="https://res.cloudinary.com/april-skrine/image/upload/v1648238629/Phase%204%20Project/cododojologin_mhzra9.jpg"
+            alt='dojo'
+          />
+        </div>
+        <div className='login-container-child'>
+          <form onSubmit={handleSubmit}>
+            <label style={{color: '#b21e1c', fontSize: '20px', fontFamily: 'oswald', display:'block'}}>username:</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className='input-boxes'
+              />
+            <label style={{color: '#b21e1c', fontSize: '20px', fontFamily: 'oswald', display:'block'}}>password:</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className='input-boxes'
+              />
+            <button className='button-header' type="submit">LOG IN</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

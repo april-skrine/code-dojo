@@ -26,13 +26,13 @@ function Header({ user }) {
         </div>
         <div style={{ order: 2, flexGrow: 10 }}>
           <h1 className="text-header">
-            {user ? user.username : "AnonymousNinja"} -{" "}
-            {user ? clanName() : "You are clanless"}
+            {user != null ? user.username : "AnonymousNinja"} -{" "}
+            {user != null ? clanName() : "You are clanless"}
           </h1>
         </div>
         <div style={{ order: 3 }}>
           <Link to="/login">
-            <button className="button-header">login.</button>
+            <button className="button-header">{user != null ? 'logout.' : 'login.'}</button>
           </Link>
           <Link to="/">
             <button className="button-header">home.</button>
