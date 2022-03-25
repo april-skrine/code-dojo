@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
+
+    require 'byebug'
     
-    skip_before_action :authorized_user, only: :login
+    skip_before_action :authorized_user, only: [:login, :show]
 
     def login
         user = User.find_by(username: params[:username])
@@ -14,6 +16,15 @@ class SessionsController < ApplicationController
 
     def logout
         session.delete :user_id
+    end
+
+    def show
+        # byebug
+        if session[:user_id]
+            render json: {}, status: :ok
+        else
+            render json: {error: "You are not authorized"}, status: :unauthorized
+        end
     end
 
 end

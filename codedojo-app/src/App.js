@@ -1,15 +1,26 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Lander from "./Components/Lander";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
+import Home from "./Components/Home";
 
 function App() {
-  const [user, setCurrentUser] = useState("");
+  const [user, setCurrentUser] = useState(null);
 
-  console.log(user);
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("/status")
+	// 	.then((r) => {
+  //     if (r.ok) {
+  //       r.json().then(console.log);
+  //     }
+  //   });
+  // }, [user])
+
+console.log(user)
 
   return (
     <div>
@@ -21,19 +32,18 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<Login setCurrentUser={setCurrentUser} />}
+          element={<Login setCurrentUser={setCurrentUser}/>}
         ></Route>
         <Route
           exact
           path="/signup"
           element={<Signup setCurrentUser={setCurrentUser} />}
         ></Route>
-        {/* <Route exact path="/login">
-          <Login setCurrentUser={setCurrentUser} />
-        </Route>
-        <Route exact path="/signup">
-          <Signup setCurrentUser={setCurrentUser} />
-        </Route> */}
+        <Route
+          exact
+          path="/home"
+          element={<Home />}
+        ></Route>
       </Routes>
     </div>
   );

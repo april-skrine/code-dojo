@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :clans, only: [:index, :show]
   post '/login', to: 'sessions#login'
   post '/logout', to: 'sessions#logout'
+  get '/status', to: 'sessions#show'
 end
