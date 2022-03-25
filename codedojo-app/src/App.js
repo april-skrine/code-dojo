@@ -42,7 +42,7 @@ console.log(user)
         <Route
           exact
           path="/home"
-          element={<Home />}
+          element={user ? <Home /> : <Login />}
         ></Route>
       </Routes>
     </div>

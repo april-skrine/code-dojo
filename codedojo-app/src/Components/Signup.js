@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
 function Signup({ setCurrentUser }) {
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newClan, setNewClan] = useState("");
+
+  const navigate = useNavigate()
 
   function onSubmit(e) {
     e.preventDefault();
@@ -22,6 +25,8 @@ function Signup({ setCurrentUser }) {
     })
       .then((r) => r.json())
       .then((user) => setCurrentUser(user));
+
+    navigate('/home')
   }
 
   const handleClanId = (event, result) => {
