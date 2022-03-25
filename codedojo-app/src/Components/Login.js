@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 function Login({ setCurrentUser }) {
   const [username, setUsername] = useState("");
@@ -18,22 +18,22 @@ function Login({ setCurrentUser }) {
   }
 
   return (
-      <div>
-        <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">LOG IN</button>
-        </form>
-      </div>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">LOG IN</button>
+      </form>
+    </div>
   );
 }
 
-export default Login
+export default Login;

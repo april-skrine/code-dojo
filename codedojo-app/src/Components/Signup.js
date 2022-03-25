@@ -1,70 +1,77 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
 function Signup({ setCurrentUser }) {
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [newClan, setNewClan] = useState("")
-  const [newClanId, setNewClanId] = useState("")
+  const [newClan, setNewClan] = useState("");
 
   function onSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const newUser = {
       username: newUsername,
       password: newPassword,
-      clan: newClan,
-      clan_id: newClanId
-    }
-    console.log(newUser)
-    // fetch('/users', {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(newUser),
-    // })
-    //   .then((r) => r.json())
-    //   .then((user) => setCurrentUser(user));
+      clan_id: parseInt(newClan.clans),
+    };
+    console.log(newUser);
+    fetch("/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((r) => r.json())
+      .then((user) => setCurrentUser(user));
   }
 
-  function handleClanId(e) {
-    setNewClan(e.target.value)
-    if (newClan === "Vanilla Vipers") {
-      newClanId = 1
-    } else if (newClan === "React Ronin") {
-      newClanId = 2
-    } else if (newClan === "Ruby Red Pandas") {
-      newClanId = 3
-    } else if (newClan === "Rails Rabbits") {
-      newClanId = 4
-    }
-  }
+  const handleClanId = (event, result) => {
+    const { name, value } = result || event.target;
+    setNewClan({ ...newClan, [name]: value });
+  };
 
-  console.log(newClanId)
-  console.log(newClan)
+  // function handleClanId(e) {
+  //   setNewClan(e.target.value);
+  //   if (newClan === "Vanilla Vipers") {
+  //     setNewClanId = 1;
+  //   } else if (newClan === "React Ronin") {
+  //     setNewClanId = 2;
+  //   } else if (newClan === "Ruby Red Pandas") {
+  //     setNewClanId = 3;
+  //   } else if (newClan === "Rails Rabbits") {
+  //     setNewClanId = 4;
+  //   }
+  // }
+
+  console.log(newClan.clans);
 
   return (
     <div>
       <div>
         <form onSubmit={onSubmit}>
-            <input
-              type="text"
-              onChange={(e) => setNewUsername(e.target.value)} 
-            />
-            <input
-              type="password"
-              onChange={(e) => setNewPassword(e.target.value)}
-            />
-            <select name="clans" id="clans" onChange={handleClanId}>
-              <option value="Vanilla Vipers">Vanilla Vipers</option>
-              <option value="React Ronin">React Ronin</option>
-              <option value="Ruby Red Pandas">Ruby Red Pandas</option>
-              <option value="Rails Rabbits">Rails Rabbits</option>
-            </select>
-            <button type="submit">SIGN UP</button>
+          <input type="text" onChange={(e) => setNewUsername(e.target.value)} />
+          <input
+            type="password"
+            onChange={(e) => setNewPassword(e.target.value)}
+          />
+          <select
+            name="clans"
+            id="clans"
+            defaultValue={"DEFAULT"}
+            onChange={handleClanId}
+          >
+            <option value="DEFAULT" disabled>
+              Select...
+            </option>
+            <option value="1">Vanilla Vipers</option>
+            <option value="2">React Ronin</option>
+            <option value="3">Ruby Red Pandas</option>
+            <option value="4">Rails Rabbits</option>
+          </select>
+          <button type="submit">SIGN UP</button>
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;
