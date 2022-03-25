@@ -47,8 +47,6 @@ function Signup({ setCurrentUser }) {
   //   }
   // }
 
-  console.log(newClan.clans);
-
   return (
     <div>
       <div className='login-container'>

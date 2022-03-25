@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :create, :destroy]
   resources :clans, only: [:index, :show]
   post '/login', to: 'sessions#login'
-  post '/logout', to: 'sessions#logout'
+  delete '/logout', to: 'sessions#logout'
   get '/status', to: 'sessions#show'
 end

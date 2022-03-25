@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header({ user }) {
+function Header({ user, handleLogout }) {
   function clanName() {
     if (user.clan_id === 1) {
       return "Vanilla Vipers";
@@ -31,12 +31,13 @@ function Header({ user }) {
           </h1>
         </div>
         <div style={{ order: 3 }}>
-          <Link to="/login">
-            <button className="button-header">{user != null ? 'logout.' : 'login.'}</button>
-          </Link>
-          <Link to="/">
+            {user ?
+              <button className='button-header' onClick={handleLogout}>logout.</button>
+            : <Link to="/login"><button className="button-header">login.</button></Link>
+            }
+          {/* <Link to="/">
             <button className="button-header">home.</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

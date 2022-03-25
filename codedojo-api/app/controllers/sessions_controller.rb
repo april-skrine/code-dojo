@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     require 'byebug'
     
-    skip_before_action :authorized_user, only: [:login, :show]
+    skip_before_action :authorized_user, only: [:login, :show, :logout]
 
     def login
         user = User.find_by(username: params[:username])
@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
     def logout
         session.delete :user_id
+        render json: {}
     end
 
     def show
