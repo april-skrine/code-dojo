@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import Header from "./Components/Header";
 import Lander from "./Components/Lander";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 
@@ -16,17 +16,25 @@ function App() {
       <div>
         <Header user={user} />
       </div>
-      <Switch>
-        <Route exact path="/">
-          <Lander />
-        </Route>
-        <Route exact path="/login">
+      <Routes>
+        <Route exact path="/" element={<Lander />}></Route>
+        <Route
+          exact
+          path="/login"
+          element={<Login setCurrentUser={setCurrentUser} />}
+        ></Route>
+        <Route
+          exact
+          path="/signup"
+          element={<Signup setCurrentUser={setCurrentUser} />}
+        ></Route>
+        {/* <Route exact path="/login">
           <Login setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/signup">
           <Signup setCurrentUser={setCurrentUser} />
-        </Route>
-      </Switch>
+        </Route> */}
+      </Routes>
     </div>
   );
 }
