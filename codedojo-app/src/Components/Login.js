@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import {Route, Routes} from  'react-router-dom'
-import Home from "./Home";
+// import {Route, Routes} from  'react-router-dom'
+// import Home from "./Home";
+import {useNavigate} from 'react-router-dom' 
 
 function Login({ setCurrentUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,6 +20,7 @@ function Login({ setCurrentUser }) {
     })
       .then((r) => r.json())
       .then((user) => setCurrentUser(user));
+      navigate('/home')
   }
 
   return (
