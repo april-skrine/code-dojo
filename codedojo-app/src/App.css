@@ -60,7 +60,18 @@
 }
 
 .input-boxes {
-  height: 10px;
+  height: 20px;
+  padding: 12px 20px;
+  margin: 8px 10px;
+  border: 2px solid #b21e1c;
+  border-radius: 4px;
+  font-family: oswald;
+  font-size: 20px
+}
+
+.input-dropdown {
+  height: 58px;
+  width: 220px;
   padding: 12px 20px;
   margin: 8px 10px;
   border: 2px solid #b21e1c;

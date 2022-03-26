@@ -34,19 +34,6 @@ function Signup({ setCurrentUser }) {
     setNewClan({ ...newClan, [name]: value });
   };
 
-  // function handleClanId(e) {
-  //   setNewClan(e.target.value);
-  //   if (newClan === "Vanilla Vipers") {
-  //     setNewClanId = 1;
-  //   } else if (newClan === "React Ronin") {
-  //     setNewClanId = 2;
-  //   } else if (newClan === "Ruby Red Pandas") {
-  //     setNewClanId = 3;
-  //   } else if (newClan === "Rails Rabbits") {
-  //     setNewClanId = 4;
-  //   }
-  // }
-
   return (
     <div>
       <div className='login-container'>
@@ -75,10 +62,9 @@ function Signup({ setCurrentUser }) {
               id="clans"
               defaultValue={"DEFAULT"}
               onChange={handleClanId}
-              className='input-boxes'
+              className='input-dropdown'
             >
               <option value="DEFAULT" disabled>
-              
               </option>
               <option value="1">Vanilla Vipers</option>
               <option value="2">React Ronin</option>

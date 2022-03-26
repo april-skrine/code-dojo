@@ -1,0 +1,186 @@
+Answers are whichever letter is capitalized
+
+Javascript:
+
+1. Fill in the blank for the missing equality operator:
+9000 ___ 9001
+=> true
+
+    A. ==!
+    b. ===
+    c. =
+    d.!==
+
+2. Given the following code:
+const age = 6;
+const isAdult = age >= 18;
+isAdult; //=> ___
+
+    a. TRUE
+    B. FALSE
+
+3. How would you declare this JavaScript logical Operator: OR
+
+    a. &&
+    B. ||
+    c. !
+    d. !!
+
+4. Which of the following describes a variable that has been declared using const?
+
+    A. It cannot be re-assigned or re-declared.
+    b. It can be re-assigned, but not re-declared.
+    c. It can be re-declared, but not re-assigned.
+    d. I don't know.
+
+5. Which of the following is a disadvantage of using var to declare a variable?
+
+    a. It does not allow you to redeclare the variable.
+    B. It can lead to scope-related bugs.
+    c. I don't know.
+    d. It does not allow you to reassign the value of a variable.
+
+6. Which keyword will let a variable be re-assigned, but not re-declared?
+
+    A. let
+    b. const
+    c. var
+    d. other
+
+7. A function is a first class object.
+
+    A. TRUE
+    b. FALSE
+
+8. For hoisting to work, the function must be defined as a function declaration.
+
+For example:
+
+// Hoisting
+willItHoist();
+// Function declaration
+function willItHoist() {
+    console.log("You tell me!");
+}
+
+    A. TRUE
+    b. FALSE
+
+9. You cannot call a function before you have declared it.
+
+    A. TRUE
+    b. FALSE
+
+10. You should never pass a function as an argument.
+
+    a. TRUE
+    B. FALSE
+
+
+React:
+
+1. A React function component must start with a capital letter.
+
+    A. TRUE
+    b. FALSE
+
+2. Given the following code, what would appear in the console?
+
+function Parent() {
+  const header = "Hello";
+  const contents = "World";
+
+  return <Child title={header} body={contents} minutesToRead={10} />;
+}
+
+function Child(props) {
+  console.log(props);
+  // ... return JSX
+}
+
+    A.
+    {
+    title: "Hello",
+    body: "World",
+    minutesToRead: 10
+    }
+    b.
+    {
+    header: "Hello",
+    contents: "World",
+    minutesToRead: 10
+    }
+    c.
+    {
+    title: "header",
+    body: "contents",
+    minutesToRead: 10
+    }
+    d. None of the above
+
+3. What is used to pass data into a component?
+
+    a. functions
+    b. arguments
+    C. props
+    d. data
+
+4. Which of the following are true of JSX? Select all that apply.
+
+    A. JSX is an abstraction of the DOM. 
+    b. JSX is a valid form of JavaScript syntax. 
+    c. JSX and HTML are interchangeable. 
+    d. None of the above
+
+5. The following is a valid React component:
+
+ function App() {
+  return (
+    <Article />
+    <Comment />
+  );
+}
+
+    a. TRUE
+    B. FALSE
+
+6. Any time you want to make a change (adding, updating or deleting an item) to an array that's being stored in state, you first need to make a copy of the array using the spread operator.
+
+    a. TRUE
+    B. FALSE
+
+7. Event listeners cannot be attached directly to our custom React components.
+
+    A. TRUE
+    b. FALSE
+
+8. Given the following component:
+
+function App() {
+  const [numbers, setNumbers] = useState([]);
+
+  function addNumber() {
+    numbers.push(1);
+    setNumbers(numbers);
+  }
+
+  return <button onClick={addNumber}>Add</button>;
+}
+
+Clicking the button would cause the component to re-render.
+
+    a. TRUE
+    B. FALSE
+
+9. React will always re-render a component when the setState function is called.
+
+    a. TRUE
+    B. FALSE
+
+
+10. When useState() is called, it returns:
+
+    a. An array of values representing all states
+    B. A single value representing the current state 
+    c. An error
+    d. None of the above
