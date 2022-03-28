@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-function QuizContainer() {
+function QuizContainer({quizData}) {
+
   return (
     <div>
-        <p>this is quizzes</p>
+        {quizData.map((q) => <Link to={`/Quiz${q.id}`} key={q.id}>{q.quiz_name}</Link>)}
     </div>
   )
 }

@@ -2,7 +2,8 @@ import React from "react";
 import QuizContainer from "./QuizContainer";
 import LeaderContainer from "./LeaderContainer";
 
-function Home() {
+function Home({quizData}) {
+  
   return (
 
     <div>
@@ -14,7 +15,7 @@ function Home() {
           />
         </div>
         <div className="home-container-child" style={{marginTop:'50px'}}>
-          <QuizContainer />
+          <QuizContainer quizData={quizData}/>
         </div>
         <div className="home-container-child" style={{marginTop:'50px'}}>
           <LeaderContainer />

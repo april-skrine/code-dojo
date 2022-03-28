@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::API
     include ActionController::Cookies
     before_action :authorized_user
-
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
     def current_user
-        User.find_by(id:session[:current_user])
+        User.find_by(id: session[:current_user])
     end
 
     def authorized_user

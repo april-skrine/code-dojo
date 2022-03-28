@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header({ user, handleLogout }) {
+function Header({ user, handleLogout, isAuthenticated }) {
   function clanName() {
     if (user.clan_id === 1) {
       return "Vanilla Vipers";
@@ -26,8 +26,8 @@ function Header({ user, handleLogout }) {
         </div>
         <div style={{ order: 2, flexGrow: 10 }}>
           <h1 className="text-header">
-            {user != null ? user.username : "AnonymousNinja"} -{" "}
-            {user != null ? clanName() : "You are clanless"}
+            {user ? user.username : "AnonymousNinja"} - {" "}
+            {user ? clanName() : "You are clanless"}
           </h1>
         </div>
         <div style={{ order: 3 }}>

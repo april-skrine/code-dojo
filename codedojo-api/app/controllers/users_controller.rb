@@ -7,7 +7,11 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: User.find(params[:id]), status: :ok
+        if current_user
+            render json: current_user, status: :ok
+        else
+            render json: {error: "No current user!"}, status: :unauthorized
+        end
     end
 
     def create
