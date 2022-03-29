@@ -26,7 +26,7 @@ function Signup({ setCurrentUser }) {
       .then((r) => r.json())
       .then((user) => setCurrentUser(user));
 
-    navigate('/home')
+    navigate('/login')
   }
 
   const handleClanId = (event, result) => {

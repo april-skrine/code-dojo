@@ -1,7 +1,7 @@
 import React from 'react'
 import QuestionElement from './QuestionElement'
 
-function QuizQuestionCard({quiz, userScore, setUserScore}) {
+function QuizQuestionCard({quiz, countPoints}) {
 
 const questions = quiz?.questions.map((q) => {
     return [q.question_text, quiz.answers.filter(a => a.question_id === q.id)]
@@ -9,7 +9,12 @@ const questions = quiz?.questions.map((q) => {
 
   return (
     <div>
-        {questions?.map((q) => <QuestionElement setUserScore={setUserScore} userScore={userScore} q={q}/>)}
+        {questions?.map((q) => 
+          <QuestionElement 
+            countPoints={countPoints} 
+            q={q}
+          />
+        )}
     </div>
   )
 }

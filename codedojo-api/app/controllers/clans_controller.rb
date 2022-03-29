@@ -1,7 +1,10 @@
 class ClansController < ApplicationController
 
     def index
-        render json: Clan.all, status: :ok 
+        render json: Clan.all, 
+            only: :clan_name, 
+            include: [:users, :user_quizzes], 
+            status: :ok 
     end
     
     def show

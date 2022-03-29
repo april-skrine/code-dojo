@@ -60,8 +60,8 @@ function App() {
           exact path="/signup"
           element={<Signup setCurrentUser={setCurrentUser} />}/>
         <Route exact path="/home" element={<Home quizData={quizData}/>} />
-        <Route exact path="/Quiz1" element={<Quiz1 quizData={quizData}/>} />
-        <Route exact path="/Quiz2" element={<Quiz2 quizData={quizData}/>} />
+        <Route exact path="/Quiz1" element={<Quiz1 quizData={quizData} user={user}/>} />
+        <Route exact path="/Quiz2" element={<Quiz2 quizData={quizData} user={user}/>} />
       </Routes>
     </div>
   );
