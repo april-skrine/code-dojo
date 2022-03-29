@@ -9,7 +9,7 @@ function Lander() {
           <div className='lander-container-child'>
             <img src="https://res.cloudinary.com/april-skrine/image/upload/v1648153187/Phase%204%20Project/lander-ninja_rnkqp1.jpg" alt="big-ninja"/>
           </div>
-          <div class="break"></div>
+          <div className="break"></div>
           <div className='lander-container-child'>
             <Link to="/login">
               <button className='button-lander'>login.</button>
