@@ -6,14 +6,8 @@ class Clan < ApplicationRecord
         self.user_quizzes.sum(:points_scored)
     end
 
-    def all_clan_points
-        Clan.all.map do |c|
-            puts "Hi"
-            # c.clan_points
-        end
+    def self.all_clan_points
+        clan_totals = Clan.all.map{|c| {c.clan_name => c.clan_points}}
+        return clan_totals
     end
 end
-
-# self.actors.map do |n|
-#     "#{n.first_name} #{n.last_name}"
-# end

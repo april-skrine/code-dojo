@@ -1,9 +1,9 @@
 class ClansController < ApplicationController
 
+    skip_before_action :authorized_user, only: :index
+
     def index
-        render json: Clan.all, 
-            only: :clan_name, 
-            include: [:users, :user_quizzes], 
+        render json: Clan.all_clan_points, 
             status: :ok 
     end
     

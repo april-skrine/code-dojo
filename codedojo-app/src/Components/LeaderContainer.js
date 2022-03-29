@@ -2,19 +2,19 @@ import React, {useState, useEffect} from 'react'
 
 function LeaderContainer() {
 
-//   const [leaderboard, setLeaderboard] = useState([])
+  const [leaderboard, setLeaderboard] = useState([])
 
-//   useEffect(() => {
-//     fetch("/clans")
-//       .then((r) => r.json())
-//       .then(data => setLeaderboard(data));
-// }, [])
+  useEffect(() => {
+    fetch("/clans")
+      .then((r) => r.json())
+      .then(data => setLeaderboard(data));
+}, [])
 
-// console.log(leaderboard)
+console.log(leaderboard)
 
   return (
     <div>
-        <p>leader</p>
+        {leaderboard.map((c) => <p></p>)}
     </div>
   )
 }
