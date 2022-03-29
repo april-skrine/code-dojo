@@ -19,7 +19,7 @@ function Header({ user, handleLogout, isAuthenticated }) {
       <div className="header-container">
         <div style={{ order: 1 }}>
           <img
-            src="https://res.cloudinary.com/april-skrine/image/upload/v1648152978/Phase%204%20Project/ninja-base_ei4wh9.jpg"
+            src="https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan1_njxb66.jpg"
             alt="ninja-not-logged-in"
             style={{ height: "50px" }}
           />
@@ -27,7 +27,7 @@ function Header({ user, handleLogout, isAuthenticated }) {
         <div style={{ order: 2, flexGrow: 10 }}>
           <h1 className="text-header">
             {user ? user.username : "AnonymousNinja"} - {" "}
-            {user ? clanName() : "You are clanless"}
+            {user ? clanName() : "No clan."}
           </h1>
         </div>
         <div style={{ order: 3 }}>

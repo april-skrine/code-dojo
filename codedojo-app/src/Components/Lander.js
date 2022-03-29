@@ -7,7 +7,9 @@ function Lander() {
         <div className='lander-container'>
           <div className="break"></div>
           <div className='lander-container-child'>
-            <img src="https://res.cloudinary.com/april-skrine/image/upload/v1648153187/Phase%204%20Project/lander-ninja_rnkqp1.jpg" alt="big-ninja"/>
+            <img src="https://res.cloudinary.com/april-skrine/image/upload/v1648582197/Phase%204%20Project/welcometo_omznod.jpg"
+              style={{width: '800px'}}
+            />
           </div>
           <div className="break"></div>
           <div className='lander-container-child'>

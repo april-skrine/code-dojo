@@ -50,14 +50,58 @@
   margin-top: 5px;
 }
 
+.home-background {
+  background-image: url('https://res.cloudinary.com/april-skrine/image/upload/v1648580193/Phase%204%20Project/bgmountain_egmmsj.jpg');
+  background-repeat: no-repeat;
+  background-position: left 0px bottom 0px;
+  background-size: 800px;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
+
+.home-container-child-link {
+  text-align: center;
+}
+
+.home-container-child-quiz {
+  font-family: oswald;
+  font-size: 40px;
+  padding: 8px 20px;
+  border-radius: 12px;
+  text-align: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  background-color: white;
+  border: 2px solid #b21e1c;
+}
+
+.home-container-child-leader {
+  font-family: oswald;
+  font-size: 30px;
+  padding: 8px 20px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: white;
+  border: 2px solid #b21e1c;
+}
+
 .home-container {
+  margin-top: -40px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  align-content: center;
-  gap: 20px;
+}
+
+.home-container-2 {
+  margin-top: -40px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .input-boxes {
@@ -97,6 +141,16 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+.quiz-container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  font-family: oswald;
+  font-size: 20px;
 }
 
 .signup-container {

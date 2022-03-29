@@ -15,10 +15,10 @@ const scores = leaderboard.map(c => Object.values(c))
 
   return (
     <div>
-        <p>{clanNames[0]} has scored {scores[0]} points</p>
-        <p>{clanNames[1]} has scored {scores[1]} points</p>
-        <p>{clanNames[2]} has scored {scores[2]} points</p>
-        <p>{clanNames[3]} has scored {scores[3]} points</p>
+        <p><b>{clanNames[0]}</b> has scored {scores[0]} points</p>
+        <p><b>{clanNames[1]}</b> has scored {scores[1]} points</p>
+        <p><b>{clanNames[2]}</b> has scored {scores[2]} points</p>
+        <p><b>{clanNames[3]}</b> has scored {scores[3]} points</p>
     </div>
   )
 }

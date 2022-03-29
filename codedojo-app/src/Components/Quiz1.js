@@ -34,15 +34,19 @@ function Quiz1({quizData, user}) {
   }
 
   return (
-    <div>
-      <div>
-        <form onSubmit={tallyScore}>
-          <QuizQuestionCard 
-            quiz={quizOne}
-            countPoints={countPoints}
-          />
-          <button class="submit" type="submit">Submit</button>
-        </form>
+    <div className="home-background">
+      <div className="quiz-container">
+        <div>
+          <form onSubmit={tallyScore}>
+            <QuizQuestionCard 
+              quiz={quizOne}
+              countPoints={countPoints}
+            />
+            <button className='button-lander'
+              style={{marginTop: '20px', marginLeft: '0px'}}
+              type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   )
