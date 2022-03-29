@@ -26,15 +26,20 @@ function Header({ user, handleLogout, isAuthenticated }) {
         </div>
         <div style={{ order: 2, flexGrow: 10 }}>
           <h1 className="text-header">
-            {user ? user.username : "AnonymousNinja"} - {" "}
+            {user ? user.username : "AnonymousNinja"} -{" "}
             {user ? clanName() : "No clan."}
           </h1>
         </div>
         <div style={{ order: 3 }}>
-            {user ?
-              <button className='button-header' onClick={handleLogout}>logout.</button>
-            : <Link to="/login"><button className="button-header">login.</button></Link>
-            }
+          {user ? (
+            <button className="button-header" onClick={handleLogout}>
+              logout.
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="button-header">login.</button>
+            </Link>
+          )}
           {/* <Link to="/">
             <button className="button-header">home.</button>
           </Link> */}

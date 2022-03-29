@@ -1,16 +1,18 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
 
-function QuizContainer({quizData}) {
-
+function QuizContainer({ quizData }) {
   return (
     <div>
-        {quizData.map((q) => 
+      {quizData.map((q) => (
         <div className="home-container-child-link">
-          <Link to={`/Quiz${q.id}`} key={q.id}>{q.quiz_name}</Link>
-        </div>)}
+          <Link to={`/Quiz${q.id}`} key={q.id}>
+            {q.quiz_name}
+          </Link>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default QuizContainer
+export default QuizContainer;

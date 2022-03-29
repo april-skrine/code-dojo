@@ -13,14 +13,14 @@
   border: 2px solid #b21e1c;
   transition-duration: 0.4s;
   margin-left: 5px;
-  margin-right: 5px;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 25px;
 }
 
 .button-header:hover {
   background-color: #b21e1c;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .button-lander {
@@ -38,7 +38,8 @@
 
 .button-lander:hover {
   background-color: #b21e1c;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .header-container {
@@ -51,15 +52,17 @@
 }
 
 .home-background {
-  background-image: url('https://res.cloudinary.com/april-skrine/image/upload/v1648580193/Phase%204%20Project/bgmountain_egmmsj.jpg');
+  /* background-image: url("https://res.cloudinary.com/april-skrine/image/upload/v1648580193/Phase%204%20Project/bgmountain_egmmsj.jpg"); */
+  background-image: url("https://i0.wp.com/wynch.org/wp-content/uploads/2019/08/5a29cb2407ece2.7312351915126884200325.png?w=1000&ssl=1");
   background-repeat: no-repeat;
   background-position: left 0px bottom 0px;
   background-size: 800px;
-  position:absolute;
-  top:0px;
-  right:0px;
-  bottom:0px;
-  left:0px;
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow-x: scroll;
 }
 
 .home-container-child-link {
@@ -94,6 +97,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  padding-left: 400px;
 }
 
 .home-container-2 {
@@ -111,7 +115,7 @@
   border: 2px solid #b21e1c;
   border-radius: 4px;
   font-family: oswald;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .input-dropdown {
@@ -122,7 +126,7 @@
   border: 2px solid #b21e1c;
   border-radius: 4px;
   font-family: oswald;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .lander-container {
@@ -149,6 +153,7 @@
   margin-right: auto;
   padding-bottom: 30px;
   padding-top: 20px;
+  padding-left: 400px;
   font-family: oswald;
   font-size: 20px;
 }
@@ -163,7 +168,7 @@
 }
 
 .selects {
-  color:black
+  color: black;
 }
 
 .text-header {
