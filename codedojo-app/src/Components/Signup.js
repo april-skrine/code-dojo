@@ -15,7 +15,6 @@ function Signup({ setCurrentUser }) {
       password: newPassword,
       clan_id: parseInt(newClan.clans),
     };
-    console.log(newUser);
     fetch("/users", {
       method: "POST",
       headers: {
@@ -24,7 +23,6 @@ function Signup({ setCurrentUser }) {
       body: JSON.stringify(newUser),
     })
       .then((r) => r.json())
-      .then((user) => setCurrentUser(user));
 
     navigate('/login')
   }
