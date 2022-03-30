@@ -9,10 +9,11 @@ const questions = quiz?.questions.map((q) => {
 
   return (
     <div>
-        {questions?.map((q) => 
+        {questions?.map((q, index) => 
           <QuestionElement 
             countPoints={countPoints} 
             q={q}
+            key={index}
           />
         )}
     </div>

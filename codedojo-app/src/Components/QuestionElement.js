@@ -8,8 +8,8 @@ function QuestionElement({q, countPoints}) {
             {q[0]}
         </p>
             <div>
-                {q[1].map((a) => 
-                    <div>
+                {q[1].map((a, index) => 
+                    <div key={index}>
                         <input
                             onClick={countPoints}
                             type="radio" 
