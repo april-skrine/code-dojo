@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Header({ user, handleLogout, isAuthenticated }) {
-
   function clanName() {
     if (user.clan_id === 1) {
       return "Vanilla Vipers";
@@ -16,17 +15,21 @@ function Header({ user, handleLogout, isAuthenticated }) {
   }
 
   function setAvatar() {
-    let avatarURL = ""
+    let avatarURL = "";
     if (user?.clan_id === 1) {
-      avatarURL = "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan2_n8wqb2.jpg";
+      avatarURL =
+        "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan2_n8wqb2.jpg";
     } else if (user?.clan_id === 2) {
-      avatarURL = "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan4_ef9jze.jpg";
+      avatarURL =
+        "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan4_ef9jze.jpg";
     } else if (user?.clan_id === 3) {
-      avatarURL = "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan3_y97dyu.jpg";
+      avatarURL =
+        "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan3_y97dyu.jpg";
     } else if (user?.clan_id === 4) {
-      avatarURL = "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan5_k3vdpt.jpg";
+      avatarURL =
+        "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan5_k3vdpt.jpg";
     }
-    return avatarURL
+    return avatarURL;
   }
 
   return (
@@ -34,9 +37,13 @@ function Header({ user, handleLogout, isAuthenticated }) {
       <div className="header-container">
         <div style={{ order: 1 }}>
           <img
-            src={ user ? setAvatar() : "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan1_njxb66.jpg"}
+            src={
+              user
+                ? setAvatar()
+                : "https://res.cloudinary.com/april-skrine/image/upload/v1648572697/Phase%204%20Project/clan1_njxb66.jpg"
+            }
             alt="ninja-avatar"
-            style={{ height: "50px" }}
+            style={{ height: "50px", marginLeft: "15px" }}
           />
         </div>
         <div style={{ order: 2, flexGrow: 10 }}>
