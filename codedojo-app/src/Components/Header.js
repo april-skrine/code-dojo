@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header({ user, handleLogout, isAuthenticated }) {
+function Header({ user, handleLogout }) {
   function clanName() {
     if (user.clan_id === 1) {
       return "Vanilla Vipers";
