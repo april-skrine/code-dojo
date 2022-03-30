@@ -59,7 +59,12 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<Login setCurrentUser={setCurrentUser} />}
+          element={
+            <Login
+              setCurrentUser={setCurrentUser}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
         />
         <Route
           exact
