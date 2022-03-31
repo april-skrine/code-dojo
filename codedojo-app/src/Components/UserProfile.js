@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-function UserProfile({user, clanName}) {
+
+function UserProfile({user, clanName, deleteUser}) {
 
   const [newBio, setNewBio] = useState("")
   const username = user?.username
@@ -9,7 +10,7 @@ function UserProfile({user, clanName}) {
 
   const submitBio = (e) => {
     e.preventDefault();
-    fetch("/users", {
+    fetch(`/users/${user.id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         bio: newBio,
@@ -19,25 +20,40 @@ function UserProfile({user, clanName}) {
     },
   })
   .then(r => r.json())
-  .then(data => console.log(data))
+  window.location.reload()
   }
 
   return (
     <div className="home-background">
-      <div className="home-container">
-        <div className="home-container-child-leader"
-            style={{marginTop: '200px', width: '200px'}}>
-            <p style={{fontSize: '50px'}}>{username}</p>
-            <p>{clan}</p>
-            <p>{bio}</p>
+      <div className="home-container"
+        style={{marginTop: '200px'}}>
+        <div className="bio-container">
+          <div className="bio-container-elements">
+            <h1 style={{
+                fontFamily: "manga", 
+                fontSize: '60px', 
+                color: '#b21e1c', 
+                marginBottom: '-15px'}}
+            >
+              {username}
+            </h1>
+            <h2 style={{fontFamily: "manga", fontSize: '30px'}}>{clan}</h2>
+            <p style={{fontFamily: "oswald", fontSize: '20px'}}>{bio}</p>
             <form onSubmit={submitBio}>
-              <textarea onChange={(e) => setNewBio(e.target.value)}>
+              <textarea className="bio-textarea" onChange={(e) => setNewBio(e.target.value)}>
               </textarea>
-              <button type="submit">
+              <p></p>
+              <div className="button-flex-box">
+              <button type="submit" className="button-bio">
                 save bio.
               </button>
+              </div>
             </form>
-        </div>
+            </div>
+            </div>
+            <button onClick={deleteUser} className="button-header" style={{marginLeft: '0px', marginRight: '0px'}}>
+              delete profile.
+            </button>
       </div>
     </div>
   )

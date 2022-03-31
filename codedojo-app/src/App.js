@@ -46,6 +46,16 @@ function App() {
     navigate("/");
   };
 
+  const deleteUser = () => {
+    console.log(user.id)
+    fetch(`/users/${user.id}`, {
+      method: "DELETE",
+    });
+    setCurrentUser(null);
+    setIsAuthenticated(false);
+    navigate("/"); 
+  }
+
   function clanName() {
     if (user?.clan_id === 1) {
         return "Vanilla Vipers";
@@ -103,7 +113,7 @@ function App() {
         <Route
           exact
           path="/UserProfile"
-          element={<UserProfile user={user} clanName={clanName}/>}
+          element={<UserProfile user={user} clanName={clanName} deleteUser={deleteUser}/>}
         />
       </Routes>
     </div>
