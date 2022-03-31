@@ -10,6 +10,7 @@ function Lander() {
           <img
             src="https://res.cloudinary.com/april-skrine/image/upload/v1648582197/Phase%204%20Project/welcometo_omznod.jpg"
             style={{ width: "800px" }}
+            alt="ninja"
           />
         </div>
         <div className="break"></div>
