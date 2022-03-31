@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Quiz1 from "./Components/Quiz1";
 import Quiz2 from "./Components/Quiz2";
 import HomeError from "./Components/HomeError";
+import UserProfile from "./Components/UserProfile";
 
 function App() {
   const [user, setCurrentUser] = useState(null);
@@ -45,6 +46,18 @@ function App() {
     navigate("/");
   };
 
+  function clanName() {
+    if (user?.clan_id === 1) {
+        return "Vanilla Vipers";
+    } else if (user?.clan_id === 2) {
+        return "React Ronin";
+    } else if (user?.clan_id === 3) {
+        return "Ruby Red Pandas";
+    } else if (user?.clan_id === 4) {
+        return "Rails Rabbits";
+    }
+  }
+
   return (
     <div>
       <div>
@@ -52,6 +65,7 @@ function App() {
           user={user}
           handleLogout={handleLogout}
           isAuthenticated={isAuthenticated}
+          clanName={clanName}
         />
       </div>
       <Routes>
@@ -85,6 +99,11 @@ function App() {
           exact
           path="/Quiz2"
           element={<Quiz2 quizData={quizData} user={user} />}
+        />
+        <Route
+          exact
+          path="/UserProfile"
+          element={<UserProfile user={user} clanName={clanName}/>}
         />
       </Routes>
     </div>

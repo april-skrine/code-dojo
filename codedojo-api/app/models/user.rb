@@ -5,7 +5,8 @@ class User < ApplicationRecord
   has_many :user_quizzes
   has_many :quizzes, through: :user_quizzes
 
-  validates :username, presence: true
-  validates :username, uniqueness: true
-  validates :password, length: {minimum: 5, maximum: 10}
+  validates :username, presence: true, on: :create
+  validates :username, uniqueness: true, on: :create
+  validates :password, length: {minimum: 5, maximum: 10}, on: :create
+
 end

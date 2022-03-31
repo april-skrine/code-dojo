@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Signup({ setCurrentUser }) {
+function Signup() {
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newClan, setNewClan] = useState("");
@@ -14,6 +14,7 @@ function Signup({ setCurrentUser }) {
       username: newUsername,
       password: newPassword,
       clan_id: parseInt(newClan.clans),
+      bio: "No bio yet!"
     };
     if (newUser.username !== "") {
       if (newUser.password.length >= 5 && newUser.password.length <= 10) {
@@ -28,13 +29,14 @@ function Signup({ setCurrentUser }) {
         navigate("/login");
       } else {
         alert(
-          "Password must be have a minimum of 5 characters and a max of 10 characters"
+          "Password must be between 5 and 10 characters"
         );
       }
     } else {
       alert("Must enter a username");
     }
   }
+
   const handleClanId = (event, result) => {
     const { name, value } = result || event.target;
     setNewClan({ ...newClan, [name]: value });
