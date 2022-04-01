@@ -3,6 +3,7 @@
   font-family: 'manga';
   font-size: 40px;
 }
+
 .bio-container {
   background-image: url("https://res.cloudinary.com/april-skrine/image/upload/v1648734650/Phase%204%20Project/bio_bg_wpq3aq.jpg");
   background-repeat: no-repeat;
@@ -62,7 +63,6 @@
   border: 2px solid #b21e1c;
   transition-duration: 0.4s;
   margin-left: 5px;
-  /* margin-top: 10px; */
   margin-right: 25px;
 }
 
@@ -101,7 +101,6 @@
 }
 
 .home-background {
-  /* background-image: url("https://res.cloudinary.com/april-skrine/image/upload/v1648580193/Phase%204%20Project/bgmountain_egmmsj.jpg"); */
   background-image: url("https://i0.wp.com/wynch.org/wp-content/uploads/2019/08/5a29cb2407ece2.7312351915126884200325.png?w=1000&ssl=1");
   background-repeat: no-repeat;
   background-position: left 0px bottom 0px;
@@ -227,7 +226,6 @@
 
 
 /* animation */
-
 .flier {
 	pointer-events: none;
 }
@@ -245,10 +243,8 @@
 }
 
  /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
-
+  and end its trajectory across the screen. Each rule
+  represents a path the element follows across the screen. */
 @keyframes fly {
 
 	98.001%, 0% {

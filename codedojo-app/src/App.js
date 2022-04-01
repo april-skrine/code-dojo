@@ -16,6 +16,7 @@ function App() {
   const [user, setCurrentUser] = useState(null);
   const [quizData, setQuizData] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [answerObj, setAnswerObj] = useState({})
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -68,6 +69,36 @@ function App() {
     }
   }
 
+  const tallyScore = (e, quizData) => {
+    e.preventDefault()
+    const answerArr = Object.values(answerObj)
+    const filteredArr = answerArr.filter(word => word === 'true')
+    const quizScore = filteredArr.length
+    fetch("/user_quizzes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user_id : user.id,
+        quiz_id : quizData.id,
+        points_scored : quizScore
+      }),
+    })
+      .then((r) => r.json())
+
+    alert(`You scored ${quizScore} out of ${answerArr.length}!`)
+    setAnswerObj({})
+    navigate('/home')
+  }
+
+  const countPoints = (e) => {
+    setAnswerObj((prevObj) => ({
+      ...prevObj,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <div>
       <div>
@@ -103,12 +134,12 @@ function App() {
         <Route
           exact
           path="/Quiz1"
-          element={<Quiz1 quizData={quizData} user={user} />}
+          element={<Quiz1 quizData={quizData} user={user} tallyScore={tallyScore} countPoints={countPoints}/>}
         />
         <Route
           exact
           path="/Quiz2"
-          element={<Quiz2 quizData={quizData} user={user} />}
+          element={<Quiz2 quizData={quizData} user={user} tallyScore={tallyScore} countPoints={countPoints}/>}
         />
         <Route
           exact

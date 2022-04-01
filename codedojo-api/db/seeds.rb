@@ -7,7 +7,7 @@ puts 'Seeding Clans...'
 Clan.create(clan_name: "Vanilla Vipers", slogan: 'Vanilla JavaScript is our lifeblood.')
 Clan.create(clan_name: "React Ronin", slogan: 'We have no master but React.')
 Clan.create(clan_name: "Ruby Red Pandas", slogan: 'Our eyes are as red as our Ruby blood.')
-Clan.create(clan_name: "React Rabbits", slogan: 'Our Rails is as fast and sleek as a rabbit.')
+Clan.create(clan_name: "Rails Rabbits", slogan: 'Our Rails is as fast and sleek as a rabbit.')
 
 puts 'Seeding Quizzes...'
 Quiz.create(quiz_name: 'JavaScript Quiz')
